@@ -1,32 +1,21 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+<template class="bg-warning">
+  <div id="app" class="aling-text-center justify-content-md-center background ">
     <router-view/>
+    
+      <b-row class="justify-content-center">
+      <router-link to="/"><b-button>home</b-button></router-link>       
+      </b-row>
+    
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style >
+.background {
+  background-image: url(https://genuine-lamps.com/images/windows/best-star-wars-wallpapers-30-images-to-help-you-pick-a-side_13.jpg);
+  
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.bigtitle {
+ -webkit-text-stroke: 3px gold;
+  color: black;
 }
 </style>
