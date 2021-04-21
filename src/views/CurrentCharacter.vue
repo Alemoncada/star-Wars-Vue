@@ -6,8 +6,10 @@
         <p class="text-white"><span class="font-weight-bold text-warning">Skin color: </span>{{currentCharacter.skin_color}} </p>
         <p class="text-white"><span class="font-weight-bold text-warning">Eye color: </span>{{currentCharacter.eye_color}}</p>
         <p class="text-white"><span class="font-weight-bold text-warning">Gender: </span>{{currentCharacter.gender}}</p>
-        <p class="text-white"><span class="font-weight-bold text-warning"> Films: </span>{{this.$store.state.films}}</p>
-        <p class="text-white"><span class="font-weight-bold text-warning"> Vehicles: </span>{{this.$store.state.vehicles ==! [] ? "unknown" : this.$store.state.vehicles  }}</p>
+        <p class="text-white"><span class="font-weight-bold text-warning"> Films: </span></p>
+        <ul v-for="(film) in this.$store.state.films" v-bind:key="film.id" class="text-white" > <li>{{film}} </li> </ul>
+        <p class="text-white"><span class="font-weight-bold text-warning"> Vehicles: </span></p>
+         <ul v-for="(vehicle) in this.$store.state.vehicles" v-bind:key="vehicle.id" class="text-white" > <li>{{vehicle}} </li> </ul>
     </div>
     </div>
 </template>
