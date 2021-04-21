@@ -29,7 +29,8 @@ export default {
     },
 
     mounted(){
-        return this.$store.dispatch('getCurrentCharacter');
+        return this.$store.dispatch('getCurrentCharacter', this.name)
+        
     },   
 }
 </script>
@@ -41,7 +42,7 @@ export default {
   background-image: url(https://genuine-lamps.com/images/windows/best-star-wars-wallpapers-30-images-to-help-you-pick-a-side_13.jpg);
   height: 90vh;
   width: 100vw;
-  background-size: cover
+  background-size: coverspo
    
 }
 .bigtitle {

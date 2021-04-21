@@ -13,8 +13,8 @@
           <b-list-group-item><span class="font-weight-bold text-danger">Mass :</span> {{character.mass}}</b-list-group-item>
           <b-list-group-item ><span class="font-weight-bold text-danger">Homeworld :</span> {{planet}}</b-list-group-item>
         </b-list-group>
-        <router-link :to="{name: 'CurrentCharacter', params: {name: character.name}}"><b-button  variant="outline-danger" @click="moreInfo(character.url)">More info</b-button></router-link>
-      </b-card>      
+        <router-link :to="{name: 'CurrentCharacter', params: {name: this.$store.state.characters.indexOf(character) + 1}}"><b-button  variant="outline-danger" >More info</b-button></router-link>
+        </b-card>      
     </b-card-group>
   </b-col>   
        
@@ -35,7 +35,7 @@ export default {
   },
 
   created(){
-    this.fetch()
+    this.fetch()    
   },
 
   methods:{
@@ -46,11 +46,7 @@ export default {
         this.planet = res.data.name;                     
       })
     }, 
-
-     moreInfo(url){
-      return this.$store.state.url = url
-    }
-    
+         
   } 
 }
 

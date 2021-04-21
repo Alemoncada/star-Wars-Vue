@@ -7,7 +7,7 @@
 
     <div >
       <b-row class="justify-content-center" >
-        <character  v-for="character of characters" v-bind:key="character.id" v-bind:character="character" />
+        <character  v-for="(character) in characters" v-bind:key="character.id" v-bind:character="character" />
       </b-row>
     </div>
 
@@ -41,6 +41,7 @@ export default{
 
   mounted(){
       return this.$store.dispatch('getCharacters');
+      
   },
 
   methods:{

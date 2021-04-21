@@ -4,14 +4,15 @@ import  axios from 'axios'
 
 Vue.use(Vuex)
 
+
+
 export default new Vuex.Store({
   state: {
 
     characters:[],
     currentCharacter: [],
     films:[],
-    vehicles:[],
-    url:"",
+    vehicles:[],    
     page: 1,
     pages: 1,        
     
@@ -43,11 +44,11 @@ export default new Vuex.Store({
       })
     },    
 
-    getCurrentCharacter({commit}){
+    getCurrentCharacter({commit}, characterName){
 
-      let url = this.state.url   
+        
        
-      axios.get(url)
+      axios.get(`https://swapi.dev/api/people/${characterName}`)
       .then((res)=>{
         commit('set_currentCharacter', res.data) ;        
 
